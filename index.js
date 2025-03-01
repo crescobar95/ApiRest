@@ -10,7 +10,7 @@ app.get("/", (req, res) => {
 });
 
 // 🔹 Obtener todos los usuarios
-app.get("/usuarios", async (req, res) => {
+app.get("/Usuarios", async (req, res) => {
   try {
     const usuarios = await Usuario.findAll();
     res.json(usuarios);
