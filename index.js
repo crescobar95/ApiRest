@@ -1,5 +1,5 @@
-const express = require("express");
-const { sequelize } = require("./models"); // Importa la conexión a la base de datos
+import express from "express";
+import sequelize from "./models/index.js"; // Importa la conexión a la base de datos
 const app = express();
 
 app.use(express.json());
