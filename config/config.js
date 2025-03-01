@@ -19,7 +19,7 @@ const config = {
 
     
     production: {
-      use_env_variable: "DATABASE_URL",
+      use_env_variable: "postgresql://postgresdbguayas_user:tA3SbsmZrW6yyVV1a4am1DS5OyLkUaiU@dpg-cuvvj22j1k6c738ak3qg-a.oregon-postgres.render.com/postgresdbguayas",
       dialect: "postgres",
       dialectOptions: {
         ssl: {
