@@ -1,6 +1,6 @@
 import "dotenv/config";
 
-export default {
+const config = {
   development: {
     username: process.env.DB_USER || "postgres",
     password: process.env.DB_PASSWORD || "cristian",
@@ -18,7 +18,7 @@ export default {
   },
 
   production: {
-    use_env_variable: "postgresql://postgresdbguayas_user:tA3SbsmZrW6yyVV1a4am1DS5OyLkUaiU@dpg-cuvvj22j1k6c738ak3qg-a.oregon-postgres.render.com/postgresdbguayas",
+    use_env_variable: "DATABASE_URL",
     dialect: "postgres",
     dialectOptions: {
       ssl: {
@@ -28,3 +28,5 @@ export default {
     }
   }
 };
+
+export default config;
