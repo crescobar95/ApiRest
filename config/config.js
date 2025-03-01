@@ -9,7 +9,7 @@ const config = {
     dialect: "postgres"
   },
 
-  test: {
+  test: { 
     username: process.env.DB_USER || "postgres",
     password: process.env.DB_PASSWORD || "cristian",
     database: process.env.DB_NAME || "database_test",

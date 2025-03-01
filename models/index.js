@@ -33,4 +33,4 @@ const sequelize = dbConfig.use_env_variable
       }
     );
 
-export default sequelize;
+export default {sequelize};
