@@ -9,11 +9,61 @@ app.get("/", (req, res) => {
   res.send("¡Servidor funcionando!");
 });
 
-//definir ruta de ingreso correcto
-app.post("/", (req, res) => {
-  res.json({ message: "Solicitud POST recibida correctamente" });
+// 🔹 Obtener todos los usuarios
+app.get("/usuarios", async (req, res) => {
+  try {
+    const usuarios = await Usuario.findAll();
+    res.json(usuarios);
+  } catch (error) {
+    res.status(500).json({ error: "Error al obtener usuarios" });
+  }
 });
 
+// 🔹 Crear un nuevo usuario (POST)
+app.post("/usuarios", async (req, res) => {
+  try {
+    const { nombre, correo, numero_contacto } = req.body;
+    const nuevoUsuario = await Usuario.create({ nombre, correo, numero_contacto });
+    res.status(201).json(nuevoUsuario);
+  } catch (error) {
+    res.status(500).json({ error: "Error al crear usuario" });
+  }
+});
+
+// 🔹 Actualizar un usuario (PUT)
+app.put("/usuarios/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { nombre, correo, numero_contacto } = req.body;
+
+    const usuario = await Usuario.findByPk(id);
+    if (!usuario) {
+      return res.status(404).json({ error: "Usuario no encontrado" });
+    }
+
+    await usuario.update({ nombre, correo, numero_contacto });
+    res.json({ message: "Usuario actualizado", usuario });
+  } catch (error) {
+    res.status(500).json({ error: "Error al actualizar usuario" });
+  }
+});
+
+// 🔹 Eliminar un usuario (DELETE)
+app.delete("/usuarios/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const usuario = await Usuario.findByPk(id);
+
+    if (!usuario) {
+      return res.status(404).json({ error: "Usuario no encontrado" });
+    }
+
+    await usuario.destroy();
+    res.json({ message: "Usuario eliminado correctamente" });
+  } catch (error) {
+    res.status(500).json({ error: "Error al eliminar usuario" });
+  }
+});
 
 // Importar modelos y sincronizar la base de datos
 sequelize.sync()
