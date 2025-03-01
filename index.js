@@ -9,6 +9,12 @@ app.get("/", (req, res) => {
   res.send("¡Servidor funcionando!");
 });
 
+//definir ruta de ingreso correcto
+app.post("/", (req, res) => {
+  res.json({ message: "Solicitud POST recibida correctamente" });
+});
+
+
 // Importar modelos y sincronizar la base de datos
 sequelize.sync()
   .then(() => console.log("Base de datos conectada"))
