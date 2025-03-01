@@ -1,8 +1,9 @@
-import { Sequelize } from "sequelize";
+import { sequelize } from "./models/index.js";
+
 import config from "../config/config.js";
 
 const env = process.env.NODE_ENV || "production"; // Aseguramos que se use "production" en Render
-const dbConfig = config[env];
+const dbConfig = config[env ];
 
 if (!dbConfig) {
   throw new Error(`No existe configuración para el entorno: ${env}`);
