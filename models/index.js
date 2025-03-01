@@ -1,4 +1,4 @@
-import { Sequelize } from "sequelize";
+import sequelize from "./models/index.js"; 
 import config from "../config/config.js";
 
 const env = process.env.NODE_ENV || "production";
@@ -29,4 +29,4 @@ const sequelize = dbConfig.use_env_variable
       }
     });
 
-export { sequelize }; // ✅ Exportación correcta
+    export default sequelize; // Exporta por defecto
