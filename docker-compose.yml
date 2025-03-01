@@ -24,7 +24,7 @@ services:
       DATABASE_URL: postgres://user:password@db:5432/mydatabase
       NODE_ENV: production
     ports:
-      - "3000:3000"
+      - "4000:4000"
     volumes:
       - .:/app
 
