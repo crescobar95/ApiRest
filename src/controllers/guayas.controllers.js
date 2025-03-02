@@ -3,7 +3,7 @@ const db = require("../../models/index.js");
 const buscar = async (req, res) => {
     try {
         const { nombre_producto } = req.params;
-        const post = await sequelize.Post.findOne({ where: { nombre_producto } });
+        const post = await sequelize.post.findOne({ where: { nombre_producto } });
 
         if (!post) {
             return res.status(404).json({ message: "Post no encontrado" });
@@ -18,7 +18,7 @@ const buscar = async (req, res) => {
 const buscarPost = async (req, res) => {
     try {
         const { id } = req.params;
-        const post = await sequelize.Post.findByPk(id);
+        const post = await sequelize.post.findByPk(id);
 
         if (!post) {
             return res.status(404).json({ message: "Post no encontrado" });
@@ -79,7 +79,7 @@ const actualizarPost = async (req, res) => {
 const eliminarPost = async (req, res) => {
     try {
         const { id } = req.params;
-        const post = await sequelize.Post.findByPk(id);
+        const post = await sequelize.post.findByPk(id);
 
         if (!post) {
             return res.status(404).json({ message: "Post no encontrado" });

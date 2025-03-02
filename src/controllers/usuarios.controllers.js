@@ -1,7 +1,7 @@
 const buscaruser = async (req, res) => {
     try {
         const { nombre } = req.params;
-        const post = await db.Usuario.findByPk(id);
+        const post = await db.usuario.findByPk(id);
 
         if (!post) {
             return res.status(404).json({ message: "Post no encontrado" });

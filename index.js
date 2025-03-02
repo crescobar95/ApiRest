@@ -10,7 +10,7 @@ app.get("/", (req, res) => {
 });
 
 // 🔹 Obtener todos los usuarios
-app.get("/Usuarios", async (req, res) => {
+app.get("/usuarios", async (req, res) => {
   try {
     const usuarios = await sequelize.Usuario.findAll();
     res.json(usuarios);
