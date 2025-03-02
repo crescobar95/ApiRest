@@ -1,4 +1,6 @@
 'use strict';
+
+import sequelize from "./index.js"; // Ajusta la ruta si es necesario
 const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Usuario extends Model {
