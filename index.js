@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
 // 🔹 Obtener todos los usuarios
 app.get("/usuarios", async (req, res) => {
   try {
-    const usuarios = await sequelize.Usuario.findAll();
+    const usuarios = await sequelize.usuario.findAll();
     res.json(usuarios);
   } catch (error) {
     res.status(500).json({ error: "Error al obtener usuarios" });
@@ -23,7 +23,7 @@ app.get("/usuarios", async (req, res) => {
 app.post("/usuarios", async (req, res) => {
   try {
     const { nombre, correo, numero_contacto } = req.body;
-    const nuevoUsuario = await Usuario.create({ nombre, correo, numero_contacto });
+    const nuevoUsuario = await usuario.create({ nombre, correo, numero_contacto });
     res.status(201).json(nuevoUsuario);
   } catch (error) {
     res.status(500).json({ error: "Error al crear usuario" });
