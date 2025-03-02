@@ -10,10 +10,10 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       nombre: {
-        type: Sequelize.STRING
+        type: Sequelize.VARCHAR
       },
       correo: {
-        type: Sequelize.STRING
+        type: Sequelize.VARCHAR
       },
       numero_contacto: {
         type: Sequelize.INTEGER
