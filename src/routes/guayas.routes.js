@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { buscar, buscarPost, crearPost, actualizarPost, eliminarPost } = require('../controllers/guayas.controllers.js');
+const { buscar, buscarPost, crearPost, actualizarPost, eliminarPost } = require('../controllers/usuarios.controllers.js');
 
 // Ruta para buscar un post por nombre_producto
 router.get('/buscar/:nombre_producto', buscar);
