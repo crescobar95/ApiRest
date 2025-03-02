@@ -16,3 +16,4 @@ module.exports = (sequelize, DataTypes) => {
   });
   return Usuario;
 };
+export default Usuario;

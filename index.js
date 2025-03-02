@@ -1,6 +1,6 @@
 import express from "express";
 import sequelize from "./models/index.js"; // Importa la conexión a la base de datos
-import {Usuario} from "./models/usuario.js"; // Ajusta la ruta si es necesario
+import Usuario from "./models/usuario.js"; // Ajusta la ruta si es necesario
 
 const app = express();
 
