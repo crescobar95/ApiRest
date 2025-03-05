@@ -5,9 +5,9 @@ const app = express();
 app.use(express.json());
 
 // Definir una ruta de prueba
-app.get("/", (req, res) => {
-  res.send("¡Servidor funcionando!");
-});
+//app.get("/", (req, res) => {
+  //res.send("¡Servidor funcionando!");
+//});
 
 // 🔹 Obtener todos los usuarios
 app.get("/usuarios", async (req, res) => {
